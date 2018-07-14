@@ -78,3 +78,17 @@ pom.xml 文件
 </project>
 ```
 
+
+
+Dockerfile 模板
+
+```dockerfile
+FROM java:8-jre
+MAINTAINER YDeity <meetliuyuan@163.com>
+
+ADD ./jar/XXXX.jar /app/
+CMD ["java", "-Xmx200m", "-jar", "/app/XXXX.jar"]
+
+EXPOSE 8889
+```
+
