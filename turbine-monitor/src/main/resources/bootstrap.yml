@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: turbine-monitor
+    
+eureka:
+  instance:
+    non-secure-port: ${server.port:8889}
+  client:
+    service-url:
+      defaultZone: http://ys:ys1234@${eureka.host:localhost}:${eureka.port:8761}/eureka/
