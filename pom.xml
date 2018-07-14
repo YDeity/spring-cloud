@@ -11,6 +11,7 @@
 	<modules>
 		<module>eureka-discovery</module>
 		<module>config</module>
+		<module>turbine-monitor</module>
 	</modules>
 
 	<properties>
