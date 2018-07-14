@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config
+  profiles:
+    active: native # 配置服务器为本地服务器,默认为 Git
+    
+eureka:
+  instance:
+    non-secure-port: ${server.port:8080} # 非 SSL 端口,若环境变量中 server.port 有值 ,则使用环境变量的值,没有则使用 8080
+    prefer-ip-address: true
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value}
+  client:
+    serviceUrl:
+      defaultZone: http://ys:ys1234@${eureka.host:localhost}:${eureka.port:8761}/eureka/ # 配置要注册到 Eureka Server 的地址
