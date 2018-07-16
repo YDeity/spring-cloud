@@ -1,0 +1,14 @@
+server:
+  port: 8890
+
+spring:
+  application:
+    name: zipkin-server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://ys:ys1234@${eureka.host:localhost}:${eureka.port:8761}/eureka/ # 配置要注册到 Eureka Server 的地址
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
